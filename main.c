@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <stdbool.h>
+#include <assert.h>
+#include <stdlib.h>
 
 struct No
 {
@@ -25,11 +28,31 @@ struct Lista* criar()
     
 };
 
+bool vazia(struct Lista* li)
+{
+    assert(li != NULL);
+    if (li->inicio == NULL)
+    {
+        return true;
+
+    } else 
+    {
+        return false;
+    }
+}
+
 int main()
 {
 
-      
-
+    struct Lista* minha_lista = criar();
+    if (vazia(minha_lista) == true)
+    {
+        printf("\nOK, Lista Vazia");
+    } else
+    {
+        printf("\nOpss... algo deu errado!");
+    }
+    
 
     return 0;
 }
