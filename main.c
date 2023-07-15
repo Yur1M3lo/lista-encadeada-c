@@ -127,6 +127,15 @@ int remover(struct Lista* li, int pos)
     return elemento;
 }
 
+void liberar(struct Lista* li)
+{
+    while (vazia(li) == false)
+    {
+        remover(li, 0);
+        free(li);
+    }
+}
+
 int main()
 {
 
