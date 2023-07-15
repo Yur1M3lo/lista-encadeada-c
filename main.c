@@ -87,6 +87,19 @@ int tamanho(struct Lista* li)
     return li->tamanho;
 }
 
+int obter(struct Lista* li, int pos)
+{
+    assert(li != NULL);
+    assert(pos >= 0 && pos < li->tamanho);
+    struct No* aux = li->inicio;
+    for (int i = 0; i < pos; i++)
+    {
+        aux = aux->Proximo;
+    }
+    return aux->info;
+    
+}
+
 int main()
 {
 
