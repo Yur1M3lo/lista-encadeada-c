@@ -68,18 +68,29 @@ void inserir(struct Lista* li, int pos, int item)
     
 }
 
+void imprimir(struct Lista* li)
+{
+    assert(li != NULL);
+    printf("\nLista: ");
+    struct No* aux = li->inicio;
+    for (int i = 0; i < li->tamanho; i++)
+    {
+        printf(" %d ", aux->info);
+        aux = aux->Proximo;
+    }
+    
+}
+
 int main()
 {
 
     struct Lista* minha_lista = criar();
-    if (vazia(minha_lista) == true)
-    {
-        printf("\nOK, Lista Vazia");
-    } else
-    {
-        printf("\nOpss... algo deu errado!");
-    }
-    
+    inserir(minha_lista, 0, 5);
+    inserir(minha_lista, 0, 3);
+    inserir(minha_lista, 0, 6);
+    inserir(minha_lista, 0, 8);
+    inserir(minha_lista, 0, 10);
+    imprimir(minha_lista);
 
     return 0;
 }
