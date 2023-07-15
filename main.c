@@ -81,6 +81,12 @@ void imprimir(struct Lista* li)
     
 }
 
+int tamanho(struct Lista* li)
+{
+    assert(li != NULL);
+    return li->tamanho;
+}
+
 int main()
 {
 
