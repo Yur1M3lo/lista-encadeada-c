@@ -100,6 +100,33 @@ int obter(struct Lista* li, int pos)
     
 }
 
+int remover(struct Lista* li, int pos)
+{
+    assert(vazia(li) == false);
+    assert(pos >= 0 && pos < li->tamanho);
+
+    struct No* ant = NULL;
+    struct No* aux = li->inicio;
+    for (int i = 0; i < pos; i++)
+    {
+        ant = aux;
+        aux = aux->Proximo;
+    }
+    
+    if(ant == NULL)
+    {
+        li->inicio = aux->Proximo;
+    } else
+    {
+        ant->Proximo = aux->Proximo;
+    }
+
+    int elemento = aux->info;
+    li->tamanho--;
+    free(aux);
+    return elemento;
+}
+
 int main()
 {
 
